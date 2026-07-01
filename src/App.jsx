@@ -12,15 +12,15 @@ const FONTS = `
 
 // ---- Brand ----
 const COLORS = {
-  bg: "#0B0A08",
-  panel: "#221D14",
-  panelLight: "#2C2519",
-  gold: "#FFCB3D",
-  blue: "#5CB3EA",
-  orange: "#F6963E",
-  red: "#EB5A42",
-  cream: "#FBF6EA",
-  muted: "#D3C9B7",
+  bg: "#050303",
+  panel: "#1A170F",
+  panelLight: "#252014",
+  gold: "#F0C848",
+  blue: "#48A0E0",
+  orange: "#E88038",
+  red: "#E85038",
+  cream: "#FFFFFF",
+  muted: "#C7C2B6",
 };
 
 // ---- Sizes & pricing ----
@@ -514,7 +514,7 @@ export default function App() {
       `}</style>
 
       {/* Header */}
-      <div style={{ background: `linear-gradient(180deg, ${COLORS.panel}, ${COLORS.bg})`, borderBottom: `1px solid #3a331f`, padding: "22px 20px" }}>
+      <div style={{ background: `linear-gradient(180deg, ${COLORS.panel}, ${COLORS.bg})`, borderBottom: `1px solid #332C1C`, padding: "22px 20px" }}>
         <div style={{ maxWidth: 500, margin: "0 auto", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
           <div>
             <div style={{ ...display, fontWeight: 700, fontSize: 38, letterSpacing: "0.02em", color: COLORS.cream }}>NectarFusions</div>
@@ -570,22 +570,22 @@ export default function App() {
 }
 
 const primaryBtnStyle = {
-  background: COLORS.gold, color: "#000000", border: "none", borderRadius: 10,
+  background: COLORS.gold, color: "#050303", border: "none", borderRadius: 10,
   padding: "17px 20px", fontWeight: 800, fontSize: 25,
 };
 const secondaryBtnStyle = {
-  background: "transparent", color: COLORS.cream, border: `1px solid #5a4f33`, borderRadius: 10,
+  background: "transparent", color: COLORS.cream, border: `1px solid #4A4128`, borderRadius: 10,
   padding: "15px 18px", fontWeight: 700, fontSize: 24,
 };
 const qtyBtnStyle = {
-  width: 44, height: 44, borderRadius: "50%", border: `1px solid #5a4f33`,
+  width: 44, height: 44, borderRadius: "50%", border: `1px solid #4A4128`,
   background: COLORS.panelLight, color: COLORS.cream, display: "flex", alignItems: "center", justifyContent: "center",
 };
 const inputStyle = {
-  width: "100%", padding: "14px 15px", borderRadius: 8, border: `2px solid #5a4f33`,
-  fontSize: 20, background: "#FFFFFF", color: "#000000",
+  width: "100%", padding: "14px 15px", borderRadius: 8, border: `2px solid #4A4128`,
+  fontSize: 20, background: "#FFFFFF", color: "#050303",
 };
-const cardStyle = { background: COLORS.panel, borderRadius: 12, padding: 18, border: "1px solid #3a331f" };
+const cardStyle = { background: COLORS.panel, borderRadius: 12, padding: 18, border: "1px solid #332C1C" };
 
 function StepDots({ step, total = 5 }) {
   return (
@@ -593,7 +593,7 @@ function StepDots({ step, total = 5 }) {
       {Array.from({ length: total }).map((_, i) => (
         <div key={i} style={{
           width: i + 1 === step ? 22 : 8, height: 8, borderRadius: 4,
-          background: i + 1 <= step ? COLORS.gold : "#3a331f", transition: "all 0.2s",
+          background: i + 1 <= step ? COLORS.gold : "#332C1C", transition: "all 0.2s",
         }} />
       ))}
     </div>
@@ -647,9 +647,9 @@ function FlavorGroup({ title, items, builderFlavorId, setBuilderFlavorId, icon }
         {items.map((f) => (
           <button key={f.id} onClick={() => setBuilderFlavorId(f.id)} style={{
             padding: "8px 14px", borderRadius: 20, fontSize: 22, fontWeight: 700,
-            border: builderFlavorId === f.id ? `1px solid ${COLORS.gold}` : "1px solid #3a331f",
+            border: builderFlavorId === f.id ? `1px solid ${COLORS.gold}` : "1px solid #332C1C",
             background: builderFlavorId === f.id ? COLORS.gold : COLORS.panelLight,
-            color: builderFlavorId === f.id ? "#000000" : COLORS.cream,
+            color: builderFlavorId === f.id ? "#050303" : COLORS.cream,
           }}>
             {f.name}
           </button>
@@ -716,7 +716,7 @@ function OrderFlow(props) {
       return (
         <div style={{ maxWidth: 500, margin: "0 auto", padding: "40px 16px 60px", textAlign: "center" }} className="fade-in">
           <div style={{ width: 64, height: 64, borderRadius: "50%", background: COLORS.orange, display: "flex", alignItems: "center", justifyContent: "center", margin: "0 auto 16px" }}>
-            <Check size={30} color="#000000" />
+            <Check size={30} color="#050303" />
           </div>
           <div style={{ ...display, fontSize: 38, fontWeight: 700 }}>Got it, {eventForm.firstName}!</div>
           <div style={{ fontSize: 24, color: COLORS.muted, marginTop: 8, lineHeight: 1.6 }}>
@@ -789,8 +789,8 @@ function OrderFlow(props) {
               {SIZES.map((s) => (
                 <button key={s.id} onClick={() => setBuilderSize(s.id)} style={{
                   padding: "10px 8px", borderRadius: 8, textAlign: "left",
-                  border: builderSize === s.id ? `1px solid ${COLORS.gold}` : "1px solid #3a331f",
-                  background: builderSize === s.id ? "#2b2412" : COLORS.panelLight,
+                  border: builderSize === s.id ? `1px solid ${COLORS.gold}` : "1px solid #332C1C",
+                  background: builderSize === s.id ? "#332912" : COLORS.panelLight,
                 }}>
                   <div style={{ fontWeight: 700, fontSize: 22 }}>{s.label}</div>
                   <div style={{ fontSize: 20, color: COLORS.muted, marginTop: 2 }}>
@@ -811,8 +811,8 @@ function OrderFlow(props) {
               {HONEY_TYPES.map((t) => (
                 <button key={t.id} onClick={() => setBuilderType(t.id)} style={{
                   flex: 1, padding: "10px 8px", borderRadius: 8, fontSize: 22, fontWeight: 700,
-                  border: builderType === t.id ? `1px solid ${COLORS.gold}` : "1px solid #3a331f",
-                  background: builderType === t.id ? "#2b2412" : COLORS.panelLight, color: COLORS.cream,
+                  border: builderType === t.id ? `1px solid ${COLORS.gold}` : "1px solid #332C1C",
+                  background: builderType === t.id ? "#332912" : COLORS.panelLight, color: COLORS.cream,
                 }}>
                   {t.label}
                 </button>
@@ -882,7 +882,7 @@ function OrderFlow(props) {
           {markets.map((m) => (
             <button key={m.id} onClick={() => { setSelectedMarketId(m.id); setSelectedSlot(null); }} style={{
               ...cardStyle, display: "block", width: "100%", textAlign: "left", marginBottom: 10,
-              border: selectedMarketId === m.id ? `1px solid ${COLORS.gold}` : "1px solid #3a331f",
+              border: selectedMarketId === m.id ? `1px solid ${COLORS.gold}` : "1px solid #332C1C",
             }}>
               <div style={{ ...display, fontWeight: 700, fontSize: 28 }}>{m.name}</div>
               <div style={{ fontSize: 22, color: COLORS.muted, display: "flex", alignItems: "center", gap: 6, marginTop: 4 }}>
@@ -910,9 +910,9 @@ function OrderFlow(props) {
               return (
                 <button key={slot} disabled={full} onClick={() => setSelectedSlot(slot)} style={{
                   padding: "12px 8px", borderRadius: 8,
-                  border: selectedSlot === slot ? `1px solid ${COLORS.gold}` : "1px solid #3a331f",
+                  border: selectedSlot === slot ? `1px solid ${COLORS.gold}` : "1px solid #332C1C",
                   background: full ? "#00000030" : selectedSlot === slot ? COLORS.gold : COLORS.panelLight,
-                  color: full ? "#5c554a" : selectedSlot === slot ? "#000000" : COLORS.cream,
+                  color: full ? "#8A8377" : selectedSlot === slot ? "#050303" : COLORS.cream,
                   opacity: full ? 0.6 : 1,
                 }}>
                   <div style={{ fontWeight: 700, display: "flex", alignItems: "center", justifyContent: "center", gap: 5 }}>
@@ -939,7 +939,7 @@ function OrderFlow(props) {
             {cart.map((i) => <div key={i.lineId} style={{ fontSize: 24, marginBottom: 2 }}>{i.qty}× {i.sizeLabel} {i.flavorName} ({i.honeyType === "spun" ? "Spun" : "Regular"})</div>)}
             <div style={{ fontSize: 20, fontWeight: 800, textTransform: "uppercase", letterSpacing: "0.08em", color: COLORS.muted, marginTop: 10, marginBottom: 4 }}>Pickup</div>
             <div style={{ fontSize: 24 }}>{selectedMarket.name}, {fmtDate(selectedMarket.date)} at {fmtTime(selectedSlot)}</div>
-            <div style={{ display: "flex", justifyContent: "space-between", marginTop: 10, paddingTop: 10, borderTop: "1px solid #3a331f", fontWeight: 800 }}>
+            <div style={{ display: "flex", justifyContent: "space-between", marginTop: 10, paddingTop: 10, borderTop: "1px solid #332C1C", fontWeight: 800 }}>
               <span>Total (pay at pickup)</span><span style={{ color: COLORS.gold }}>${cartTotal.toFixed(2)}</span>
             </div>
           </div>
@@ -966,7 +966,7 @@ function OrderFlow(props) {
       {step === 5 && confirmedOrder && (
         <div className="fade-in" style={{ textAlign: "center", paddingTop: 10 }}>
           <div style={{ width: 64, height: 64, borderRadius: "50%", background: COLORS.gold, display: "flex", alignItems: "center", justifyContent: "center", margin: "0 auto 16px" }}>
-            <Check size={30} color="#000000" />
+            <Check size={30} color="#050303" />
           </div>
           <div style={{ ...display, fontSize: 38, fontWeight: 700 }}>You're all set, {confirmedOrder.firstName}</div>
           <div style={{ fontSize: 22, color: COLORS.muted, margin: "6px 0 20px" }}>Confirmation #{confirmedOrder.id}</div>
@@ -977,7 +977,7 @@ function OrderFlow(props) {
             {confirmedOrder.marketAddress && <div style={{ color: COLORS.muted }}>{confirmedOrder.marketAddress}</div>}
             <div style={{ fontSize: 20, fontWeight: 800, textTransform: "uppercase", letterSpacing: "0.08em", color: COLORS.muted, marginTop: 12, marginBottom: 4 }}>Order</div>
             {confirmedOrder.items.map((i) => <div key={i.lineId}>{i.qty}× {i.sizeLabel} {i.flavorName} ({i.honeyType === "spun" ? "Spun" : "Regular"})</div>)}
-            <div style={{ display: "flex", justifyContent: "space-between", marginTop: 10, paddingTop: 10, borderTop: "1px solid #3a331f", fontWeight: 800 }}>
+            <div style={{ display: "flex", justifyContent: "space-between", marginTop: 10, paddingTop: 10, borderTop: "1px solid #332C1C", fontWeight: 800 }}>
               <span>Due at pickup</span><span style={{ color: COLORS.gold }}>${confirmedOrder.total.toFixed(2)}</span>
             </div>
           </div>
@@ -1037,7 +1037,7 @@ function TabButton({ active, onClick, icon, label }) {
     <button onClick={onClick} style={{
       flex: 1, display: "flex", alignItems: "center", justifyContent: "center", gap: 6,
       padding: "10px 4px", borderRadius: 8, border: "none", fontWeight: 700, fontSize: 21,
-      background: active ? COLORS.gold : "#221d14", color: active ? "#000000" : COLORS.cream,
+      background: active ? COLORS.gold : "#252014", color: active ? "#050303" : COLORS.cream,
     }}>
       {icon} {label}
     </button>
@@ -1124,8 +1124,8 @@ function AdminPanel(props) {
                 {["core", "seasonal"].map((c) => (
                   <button key={c} onClick={() => setNewFlavor({ ...newFlavor, category: c })} style={{
                     flex: 1, padding: "8px 0", borderRadius: 8, fontSize: 22, fontWeight: 700, textTransform: "capitalize",
-                    border: newFlavor.category === c ? `1px solid ${COLORS.gold}` : "1px solid #3a331f",
-                    background: newFlavor.category === c ? "#2b2412" : COLORS.panelLight, color: COLORS.cream,
+                    border: newFlavor.category === c ? `1px solid ${COLORS.gold}` : "1px solid #332C1C",
+                    background: newFlavor.category === c ? "#332912" : COLORS.panelLight, color: COLORS.cream,
                   }}>{c}</button>
                 ))}
               </div>
@@ -1149,11 +1149,11 @@ function AdminPanel(props) {
               <div style={{ display: "flex", gap: 6, alignItems: "center" }}>
                 <button onClick={() => toggleFlavorField(f, "featured")} style={{
                   fontSize: 20, fontWeight: 700, padding: "5px 10px", borderRadius: 20, border: "none",
-                  background: f.featured ? COLORS.gold : "#3a331f", color: f.featured ? "#000000" : COLORS.muted,
+                  background: f.featured ? COLORS.gold : "#332C1C", color: f.featured ? "#050303" : COLORS.muted,
                 }}>Featured</button>
                 <button onClick={() => toggleFlavorField(f, "active")} style={{
                   fontSize: 20, fontWeight: 700, padding: "5px 10px", borderRadius: 20, border: "none",
-                  background: f.active ? COLORS.blue : "#3a331f", color: f.active ? "#0B0A08" : COLORS.muted,
+                  background: f.active ? COLORS.blue : "#332C1C", color: f.active ? "#050303" : COLORS.muted,
                 }}>Active</button>
                 <button onClick={() => deleteFlavor(f.id)} style={{ background: "none", border: "none", color: COLORS.red, padding: 4 }}><Trash2 size={18} /></button>
               </div>
@@ -1182,7 +1182,7 @@ function AdminPanel(props) {
                 {o.notes && <div style={{ fontSize: 21, marginTop: 4, fontStyle: "italic", color: COLORS.muted }}>"{o.notes}"</div>}
                 <button onClick={() => togglePickedUp(o)} style={{
                   marginTop: 8, fontSize: 21, fontWeight: 700, padding: "6px 12px", borderRadius: 20, border: "none",
-                  background: o.pickedUp ? "#3a331f" : COLORS.blue, color: o.pickedUp ? COLORS.muted : "#0B0A08",
+                  background: o.pickedUp ? "#332C1C" : COLORS.blue, color: o.pickedUp ? COLORS.muted : "#050303",
                 }}>{o.pickedUp ? "Picked up ✓" : "Mark picked up"}</button>
               </div>
             ))}
@@ -1212,7 +1212,7 @@ function AdminPanel(props) {
                   {["new", "contacted", "quoted", "booked"].map((s) => (
                     <button key={s} onClick={() => setEventStatus(r, s)} style={{
                       fontSize: 20, fontWeight: 700, padding: "5px 10px", borderRadius: 20, border: "none", textTransform: "capitalize",
-                      background: r.status === s ? COLORS.orange : "#3a331f", color: r.status === s ? "#000000" : COLORS.muted,
+                      background: r.status === s ? COLORS.orange : "#332C1C", color: r.status === s ? "#050303" : COLORS.muted,
                     }}>{s}</button>
                   ))}
                 </div>
